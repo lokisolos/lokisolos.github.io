@@ -224,17 +224,28 @@ function findMatches(word) {
     return result;
 }
 
+function exit() {
+    helpCard.style = 'opacity: 0';
+    helpBackground.style = 'opacity: 0; z-index: 0';
+    body.style = 'overflow: auto';
+}
+
 const input = document.getElementById("main")
 const helpButton = document.getElementById("HelpButton")
 const ul = document.getElementsByTagName("ul")[0];
 const characterCount = document.getElementById("character-count");
+const helpCard = document.getElementById('helpcard');
+const helpBackground = document.getElementsByClassName("helpbg")[0];
+const exitButton = document.getElementById('x');
+const container = document.getElementsByClassName("container")[0];
+const body = document.getElementsByTagName("body")[0];
 
 input.addEventListener("keyup", key => {
     if (key.code == "ShiftLeft" || key.code == "ShiftRight")
         return;
     let matches = findMatches(input.value);
     ul.innerHTML = '';
-    characterCount.innerHTML = `(${input.value.length}) Character${input.value.length == 1 ? "" : "s"}, (${input.value.split(" ").length}) Word${input.value.split(" ").length == 1 ? "" : "s"}`;
+    characterCount.innerHTML = `${input.value.length} Character${input.value.length == 1 ? "" : "s"}, ${input.value.split(" ").length} Word${input.value.split(" ").length == 1 ? "" : "s"}, ${findMatches(input.value).length} Match${findMatches(input.value).length != 1 ? "es" : ""}`;
     for (let i = 0; i < matches.length; i++) {
         let child = document.createElement("li")
         child.role = 'button'
@@ -247,5 +258,10 @@ input.addEventListener("keyup", key => {
 })
 
 helpButton.addEventListener("click", () => {
-    
+    helpBackground.style = 'opacity: 1; z-index: 6';
+    helpCard.style = 'opacity: 1; z-index: 7';
+    container.style = 'z-index';
+    body.style = 'overflow: hidden';
 })
+
+exitButton.addEventListener("click", exit);

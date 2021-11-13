@@ -9,7 +9,7 @@
     width: 100%;
     background-color: orangered;
     padding: 25px;
-    z-index: 1;
+    z-index: 5;
     border-bottom: 3px solid black;
     top: 0;
     display: flex;
@@ -35,8 +35,8 @@ body::-webkit-scrollbar {
     width: 100%;
     display: flex;
     justify-content: center;
+    z-index: 4;
 }
-
 
 input[type='text'] {
     font-size: 1.5rem;
@@ -52,7 +52,7 @@ input[type='text'] {
     letter-spacing: 0.2rem;
 }
 
-ul {
+.results {
     font-size: 2rem;
     list-style: none;
     display: grid;
@@ -61,7 +61,7 @@ ul {
     max-width: 2000px;
 }
 
-li {
+.results li {
     padding: 15px;
     color: white;
     background-color: orangered;
@@ -73,14 +73,14 @@ li {
     cursor: pointer;
 }
 
-li:hover {
+.results li:hover {
     background-color: white;
     color: black;
     border: 1px solid white;
 }
 
 @media (max-width: 1200px) {
-    ul {
+    .results {
         grid-template-columns: 95%;
     }
 }
@@ -118,4 +118,106 @@ li:hover {
 
 input[type='text']::placeholder {
     letter-spacing: normal;
+}
+
+.help {
+    position: absolute;
+    top: 5vh;
+    background-color: white;
+    width: 500px;
+    z-index: 3;
+    opacity: 1;
+    text-align: center;
+    padding: 35px;
+    height: 750px;
+    border: 2px solid black;
+    border-radius: 15px;
+    height: fit-content
+}
+
+.helpbg {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.66);
+    z-index: 2;
+    top: 0;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.help h1 {
+    font-size: 3rem;
+    margin: 5px;
+    margin-bottom: 15px;
+    font-family: monospace;
+}
+
+.help p {
+    text-align: left;
+    font-size: 1.25rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.75rem;
+}
+
+.help h2 {
+    position: absolute;
+    right: 5%;
+    top: -4px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 10
+}
+
+.help h2:hover {
+    color: rgba(0, 0, 0, 0.55)
+}
+
+.help h2::before {
+    position: absolute;
+    right: 7.35%;
+    content: "|";
+    transform: rotate(-40deg);
+    font-size: 1.25rem;
+    font-weight: bold;
+    top: 2.5%;
+    cursor: pointer;
+}
+
+.help h2::after {
+    position: absolute;
+    right: 6.15%;
+    content: "|";
+    transform: rotate(40deg);
+    top: 2.5%;
+    font-size: 1.25rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.help h2:hover::after, .help h2:hover::before {
+    color: rgba(0, 0, 0, 0.55)
+}
+
+.help h5 {
+    font-size: 1.25rem;
+    margin: 0;
+    margin-bottom: 50px;
+}
+
+@media (max-width: 380px) {
+    .holder {
+        display: auto;
+        position: relative;
+        left: -5%;
+    }
+
+    .help {
+        width: fit-content;
+        overflow: scroll;
+    }
 }
