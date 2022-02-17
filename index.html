@@ -1,37 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <script src='./script.js' defer></script>
-    <title>Guess the Build solver</title>
-</head>
-<body>
-    <div class="top">
-        <div class="holder">
-            <div class="in">
-                <input type="text" name="user-input" id="main" placeholder='Enter Guess here...'>
-                <button class="question" id='HelpButton'> ? </button>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
+        <script src="./script.js" defer></script>
+        <title>Guess the Build solver</title>
+    </head>
+    <body>
+        <div class="top">
+            <div class="holder">
+                <div class="in">
+                    <div class="input">
+                        <input
+                            type="text"
+                            name="user-input"
+                            id="main"
+                            placeholder="Enter Guess here..."
+                            onclick="this.select()"
+                        />
+                        <button class="x"></button>
+                    </div>
+                    <button class="question" id="HelpButton">?</button>
+                </div>
+                <h3 id="character-count">0 Characters, 0 Words, 0 Matches</h3>
             </div>
-            <h3 id='character-count'>0 Characters, 0 Words, 0 Matches</h3>
         </div>
-    </div>
-    <div class="container">
-        <ul class='results'></ul>
-    </div>
-    <div class="helpbg">
-        <div class="help" id='helpcard'>
-            <h2 role="button" id='x'></h2>
-            <h1>Help</h1>
-            <hr>
-            <h5>How to use the GTB solver</h5>
-            <p>While playing Guess the Build, hints containing underscores and letters will appear. These hints are used to make the game easier, and help out guessers. Using these hints, a list of all possible combinations can be found. These combinations help out the player even more. To get started, just enter the hint containing underscores into the text box. A list of combinations will appear. Click on a combination to copy it quickly.</p>
-            <h5>Why cant I see any words?</h5>
-            <p>Make sure you entered in the right amount of underscores. If results are to broad, you might want to wait for more letters to appear, narrowing down results.</p>
+        <div class="container">
+            <ul class="results"></ul>
         </div>
-    </div>
-</body>
-
- 
+        <div class="helpbg">
+            <div class="help" id="helpcard">
+                <h2 role="button" id="x"></h2>
+                <h1>Help</h1>
+                <hr />
+                <h5>How to use the GTB solver</h5>
+                <p>
+                    While playing Guess the Build, hints containing underscores and
+                    letters will appear. These hints are used to make the game easier, and
+                    help out guessers. Using these hints, a list of all possible
+                    combinations can be found. These combinations help out the player even
+                    more. To get started, just enter the hint containing underscores into
+                    the text box. A list of combinations will appear. Click on a
+                    combination to copy it quickly.
+                </p>
+                <h5>Why cant I see any words?</h5>
+                <p>
+                    Make sure you entered in the right amount of underscores. If results
+                    are to broad, you might want to wait for more letters to appear,
+                    narrowing down results.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
