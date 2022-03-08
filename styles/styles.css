@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Mono&display=swap");
 
 :root {
-    --bg: cornflowerblue;
-    --fg: black;
+    --bg: darkorange;
+    --fg: white;
 }
 
 * {
@@ -75,6 +75,7 @@ input[type="text"] {
     transition: 0.35s;
     font-family: monospace;
     cursor: pointer;
+    text-shadow: 1px 1px black;
 }
 
 .results li:hover {
